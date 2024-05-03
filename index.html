@@ -68,19 +68,42 @@
 			This is what I have to offer, capturing these beautiful moments from my perspective, my approach, and my technique. Immortalize these moments so they bring you love, happiness, affection, and light every time you look at your photos.</p>
 	</div>
 </section>
+<section class="modal fade" id="galleryLightbox" aria-hidden="true" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-body">
+				<div class="mg-prev">
+					<span><</span>
+				</div>
+				<img class="lightboxImage img-fluid" alt="Contenu de l'image affiché dans la modal au clique"/>
+				<div class="mg-next">
+					<span>></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 <section id="gallery">
 	<h2 class="title">Portfolio</h2>
+	<div class="filters">
+		<input
+              type="button"
+              value="All"
+              name="filtersAll"
+              class="filtersAll"
+            />
+	</div>
 	<div class="container py-3">
-		<div class="gallery" style="display: none">
-			<img data-gallery-tag="Concerts" class="gallery-item" src="./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash.webp" alt="Concert stage with red lights"/>
-			<img data-gallery-tag="Business" class="gallery-item" src="./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash.webp" alt="Portrait of a man in a suit"/>
-			<img data-gallery-tag="Business" class="gallery-item" src="./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash.webp" alt="Woman smiling in an office"/>
-			<img data-gallery-tag="Weddings" class="gallery-item" src="./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash.webp" alt="Two people touching at the ends of their hands"/>
-			<img data-gallery-tag="Portraits" class="gallery-item" src="./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash.webp" alt="Face of a man closing his eyes"/>
-			<img data-gallery-tag="Weddings" class="gallery-item" src="./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash.webp" alt="Wedding couple holding hands outdoors"/>
-			<img data-gallery-tag="Portraits" class="gallery-item" src="./assets/images/gallery/portraits/nino-van-prattenburg--443cl1uR_8-unsplash.webp" alt="Portrait of a woman running her hand through her hair behind a fence"/>
-			<img data-gallery-tag="Concerts" class="gallery-item" src="./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash.webp" alt="Singer waving in concert"/>
-			<img data-gallery-tag="Business" class="gallery-item" src="./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash.webp" alt="Smiling woman at her desk"/>
+		<div class="gallery row row-cols-1 row-cols-sm-2 row-cols-md-3 g-0">
+			<div class="col"><img data-gallery-tag="Concerts" class="gallery-item img-fluid absolute" src="./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash.webp" alt="Concert stage with red lights"/></div>
+			<div class="col"><img data-gallery-tag="Business" class="gallery-item img-fluid absolute" src="./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash.webp" alt="Portrait of a man in a suit"/></div>
+			<div class="col"><img data-gallery-tag="Business" class="gallery-item img-fluid absolute" src="./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash.webp" alt="Woman smiling in an office"/></div>
+			<div class="col"><img data-gallery-tag="Weddings" class="gallery-item img-fluid absolute" src="./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash.webp" alt="Two people touching at the ends of their hands"/></div>
+			<div class="col"><img data-gallery-tag="Portraits" class="gallery-item img-fluid absolute" src="./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash.webp" alt="Face of a man closing his eyes"/></div>
+			<div class="col"><img data-gallery-tag="Weddings" class="gallery-item img-fluid absolute" src="./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash.webp" alt="Wedding couple holding hands outdoors"/></div>
+			<div class="col"><img data-gallery-tag="Portraits" class="gallery-item img-fluid absolute" src="./assets/images/gallery/portraits/nino-van-prattenburg--443cl1uR_8-unsplash.webp" alt="Portrait of a woman running her hand through her hair behind a fence"/></div>
+			<div class="col"><img data-gallery-tag="Concerts" class="gallery-item img-fluid absolute" src="./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash.webp" alt="Singer waving in concert"/></div>
+			<div class="col"><img data-gallery-tag="Business" class="gallery-item img-fluid absolute" src="./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash.webp" alt="Smiling woman at her desk"/></div>
 		</div>
 	</div>
 	<div class="quote">

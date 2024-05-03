@@ -98,6 +98,10 @@ nav a {
 #gallery {
   /*	min-height: 100vh; */
 }
+.hide {
+  display: none !important;
+}
+
 .title {
   text-align: center;
   padding-block: 2em;
@@ -114,6 +118,15 @@ nav a {
 .nav-pills .nav-link {
   color: #000;
 }
+.col {
+  position: relative;
+  height: 0;
+  display: block;
+  padding-bottom: 33.3333333%;
+}
+.absolute {
+  position: absolute;
+}
 .item-column {
   position: relative;
   margin-bottom: 0 !important;
@@ -125,7 +138,6 @@ nav a {
   padding-bottom: 100%;
 }
 .gallery-item {
-  position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -133,6 +145,7 @@ nav a {
 }
 .mg-prev,
 .mg-next {
+  position: absolute;
   width: 30px;
   height: 30px;
   border-radius: 00%;
@@ -140,6 +153,16 @@ nav a {
   align-items: center;
   display: flex;
   font-size: 24px;
+  cursor: pointer;
+  top: 50%;
+  background: white;
+}
+.mg-prev {
+  left: -15px;
+}
+
+.mg-next {
+  right: -15px;
 }
 
 .quote {
@@ -330,6 +353,12 @@ input[type="submit"] {
   }
 }
 
+@media (max-width: 768px) {
+  .col {
+    padding-bottom: 50%;
+  }
+}
+
 @media (max-width: 650px) {
   .top-header {
     flex-direction: column;
@@ -365,5 +394,11 @@ input[type="submit"] {
   }
   .picture {
     width: 80%;
+  }
+}
+
+@media (max-width: 576px) {
+  .col {
+    padding-bottom: 100%;
   }
 }
