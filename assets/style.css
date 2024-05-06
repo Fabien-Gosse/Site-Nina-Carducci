@@ -124,6 +124,21 @@ nav a {
   display: block;
   padding-bottom: 33.3333333%;
 }
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.filters input {
+  border: none;
+  background-color: white;
+}
+
+.filters .activeBtn {
+  background-color: #beb45a;
+}
+
 .absolute {
   position: absolute;
 }
