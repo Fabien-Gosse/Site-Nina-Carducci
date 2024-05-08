@@ -138,7 +138,7 @@ nav a {
 }
 
 .filters .activeBtn {
-  background-color: #beb45a;
+  background-color: #8e723e;
   color: #fff;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out;
