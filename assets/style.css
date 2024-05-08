@@ -6,6 +6,9 @@ body {
   font-family: "Inter";
   font-style: normal;
 }
+h2 {
+  font-size: calc(1.3rem + 0.6vw);
+}
 .top-header {
   background-color: white;
   position: sticky;
@@ -95,9 +98,6 @@ nav a {
   font-size: 14px;
 }
 
-#gallery {
-  /*	min-height: 100vh; */
-}
 .hide {
   display: none !important;
 }
@@ -106,18 +106,19 @@ nav a {
   text-align: center;
   padding-block: 2em;
 }
-.gallery .nav {
-  justify-content: center;
+.filterGallery {
+  padding-top: 12px;
 }
-.nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #beb45a;
-  border-radius: 0;
+.gallery {
+  transition: none;
+  transform-origin: 0 0;
+  transform: scale(0);
 }
-.nav-pills .nav-link {
-  color: #000;
+.gallery-show {
+  transition: all 300ms ease-out;
+  transform: scale(1);
 }
+
 .col {
   position: relative;
   height: 0;
@@ -133,10 +134,19 @@ nav a {
 .filters input {
   border: none;
   background-color: white;
+  padding: 0.5rem 1rem;
 }
 
 .filters .activeBtn {
   background-color: #beb45a;
+  color: #fff;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
+}
+#gallery .container {
+  padding-top: 0 !important;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .absolute {
@@ -290,6 +300,9 @@ input[type="submit"] {
   .quote__text {
     font-size: 2.5rem;
   }
+  h2 {
+    font-size: 1.75rem;
+  }
 }
 
 @media (max-width: 1180px) {
@@ -304,8 +317,9 @@ input[type="submit"] {
     margin-top: 0;
     margin-bottom: 1em;
   }
-  #about-me h6,
-  #about-me p {
+
+  #about-me p,
+  #about-me .about-me__introduction {
     width: 100%;
   }
 }

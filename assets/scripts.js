@@ -1,39 +1,3 @@
-/*document.addEventListener("DOMContentLoaded", function () {
-  let gallery = document.querySelector(".gallery");
-
-  gallery = {
-    columns: {
-      xs: 1,
-      sm: 2,
-      md: 3,
-      lg: 3,
-      xl: 3,
-    },
-    lightBox: true,
-    lightboxId: "myAwesomeLightbox",
-    showTags: true,
-    tagsPosition: "top",
-  };
-});*/
-
-/*
-$(document).ready(function () {
-  $(".gallery").mauGallery({
-    columns: {
-      xs: 1,
-      sm: 2,
-      md: 3,
-      lg: 3,
-      xl: 3,
-    },
-    lightBox: true,
-    lightboxId: "myAwesomeLightbox",
-    showTags: true,
-    tagsPosition: "top",
-  });
-});
-*/
-
 document.addEventListener("DOMContentLoaded", function () {
   getFilters();
   filterGallery();
@@ -74,18 +38,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const filterTags = ArrayGalleryItems.map(
       (ArrayGalleryItems) => ArrayGalleryItems.dataset.galleryTag
     );
-    console.log(filterTags);
+    const gallery = document.querySelector(".gallery");
+
     let uniqueFilterTags = [...new Set(filterTags)];
 
     for (let i = 0; i < uniqueFilterTags.length; i++) {
       console.log(uniqueFilterTags[i]);
       const buttonFilters = document.querySelector("." + uniqueFilterTags[i]);
-      console.log(buttonFilters);
+
       buttonFilters.addEventListener("click", function () {
+        gallery.classList.toggle("gallery-show");
         for (let i2 = 0; i2 < galleryItems.length; i2++) {
           const galleryItemsTags = galleryItems[i2].dataset.galleryTag;
-          console.log(galleryItemsTags);
-          console.log(buttonFilters.name);
+
           if (buttonFilters.name !== galleryItemsTags) {
             galleryItems[i2].classList.add("hide");
             galleryItems[i2].parentNode.classList.add("hide");
@@ -94,6 +59,10 @@ document.addEventListener("DOMContentLoaded", function () {
             galleryItems[i2].parentNode.classList.remove("hide");
           }
         }
+        setTimeout(() => {
+          gallery.classList.toggle("gallery-show");
+        }, 10);
+
         highlightBtn(buttonFilters, uniqueFilterTags);
         activeImg();
       });
@@ -101,14 +70,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function highlightBtn(buttonFilters, uniqueFilterTags) {
-    console.log(buttonFilters);
-    console.log(uniqueFilterTags);
     buttonFilters.classList.add("activeBtn");
     for (i3 = 0; i3 < uniqueFilterTags.length; i3++) {
       const tagFilters = document.querySelector("." + uniqueFilterTags[i3]);
       const allButton = document.querySelector(".filtersAll");
-      console.log(buttonFilters);
-      console.log(uniqueFilterTags);
+
       if (uniqueFilterTags[i3] !== buttonFilters.value) {
         tagFilters.classList.remove("activeBtn");
         allButton.classList.remove("activeBtn");
@@ -120,8 +86,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const allButton = document.querySelector(".filtersAll");
     const galleryItems = document.querySelectorAll(".gallery-item");
     const inputFilter = document.querySelectorAll("input");
+    const gallery = document.querySelector(".gallery");
 
     allButton.addEventListener("click", function () {
+      gallery.classList.toggle("gallery-show");
       for (let i = 0; i < galleryItems.length; i++) {
         galleryItems[i].classList.remove("hide");
         galleryItems[i].parentNode.classList.remove("hide");
@@ -129,6 +97,9 @@ document.addEventListener("DOMContentLoaded", function () {
       for (let i2 = 0; i2 < inputFilter.length; i2++) {
         inputFilter[i2].classList.remove("activeBtn");
       }
+      setTimeout(() => {
+        gallery.classList.toggle("gallery-show");
+      }, 10);
       allButton.classList.add("activeBtn");
     });
   }
@@ -157,12 +128,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const imagesCollection = [];
     for (let i = 0; i < galleryItems.length; i++) {
       const imgClass = galleryItems[i].classList;
-      console.log(imgClass);
+
       if (imgClass.value !== "gallery-item img-fluid absolute hide") {
         imagesCollection.push(galleryItems[i]);
       }
     }
-    console.log(imagesCollection);
     return imagesCollection;
   }
 
@@ -173,8 +143,6 @@ document.addEventListener("DOMContentLoaded", function () {
     buttonPrev.onclick = function () {
       imgCollection = activeImg();
       for (let i = 0; i < imgCollection.length; i++) {
-        console.log(modalImg);
-        console.log(imgCollection[i]);
         if (modalImg.src === imgCollection[i].src) {
           if (i === 0) {
             modalImg.src = imgCollection[imgCollection.length - 1].src;
@@ -184,7 +152,6 @@ document.addEventListener("DOMContentLoaded", function () {
             index = imgCollection.indexOf(imgCollection[i]);
             modalImg.src = imgCollection[index - 1].src;
             modalImg.alt = imgCollection[index - 1].alt;
-            console.log(modalImg);
           }
         }
       }
@@ -198,8 +165,6 @@ document.addEventListener("DOMContentLoaded", function () {
     buttonNext.onclick = function () {
       imgCollection = activeImg();
       for (let i = 0; i < imgCollection.length; i++) {
-        console.log(modalImg);
-        console.log(imgCollection[i]);
         if (modalImg.src === imgCollection[i].src) {
           if (i === imgCollection.length - 1) {
             modalImg.src = imgCollection[0].src;
@@ -208,30 +173,10 @@ document.addEventListener("DOMContentLoaded", function () {
             index = imgCollection.indexOf(imgCollection[i]);
             modalImg.src = imgCollection[index + 1].src;
             modalImg.alt = imgCollection[index + 1].alt;
-            console.log(modalImg);
             return;
           }
         }
       }
     };
   }
-
-  /*function buttonFilters(filters, projects) {
-  const filtersId = filters.map((filters) => filters.id);
-
-  for (let i = 0; i < filters.length; i++) {
-    const buttonFilters = document.querySelector(".filters" + filtersId[i]);
-    articleFilters(projects, buttonFilters);
-  }
-}
-
-function articleFilters(projects, buttonFilters) {
-  buttonFilters.addEventListener("click", function () {
-    // Récupération de l'élément du DOM qui accueillera les fiches
-    const sectionGallery = document.querySelector(".gallery");
-    // Suppression des fiches existantes
-    sectionGallery.innerHTML = "";
-    for (let i2 = 0; i2 < projects.length; i2++) {
-      const categoryId = projects.map((projects) => projects.categoryId);
-      const categoryCheck = categoryId[i2];*/
 });
