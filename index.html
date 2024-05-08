@@ -1,18 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.css">
+	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" href="./assets/style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap" rel="stylesheet">
 	<meta charset="UTF-8">
 	<title>Professional photographer in Bordeaux Nina Carducci</title>
-	<meta name="description" content="Discover Nina Carducci world, a passionate photographer based in Alsace-Lorraine and Île-de-France. Photo shoots, retouching and personalized photo albums" />
-	<script src="./assets/bootstrap/bootstrap.bundle.js"></script>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-	<script defer src="./assets/maugallery.js"></script>
+	<meta name="description" content="Discover Nina Carducci world, a passionate photographer based in Alsace-Lorraine and Île-de-France. Photo shoots, retouching and personalized photo albums." />
+	<meta property="og:site_name" content="NinaCarducciPhotographer" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://nina-carducci.github.io/" />
+	<meta property="og:title" content="Professional photographer in Bordeaux - Nina Carducci" />
+	<meta property="og:description" content="Discover Nina Carducci world, a passionate photographer based in Alsace-Lorraine and Île-de-France. Photo shoots, retouching and personalized photo albums." />
+	<meta property="og:image" content="https://nina-carducci.github.io/assets/images/nina.png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@NinaCarducciTwitter" />
+	<meta name="twitter:title" content="Professional photographer in Bordeaux - Nina Carducci" />
+	<meta name="twitter:description" content="Discover Nina Carducci world, a passionate photographer based in Alsace-Lorraine and Île-de-France. Photo shoots, retouching and personalized photo albums." />
+	<meta name="twitter:image" content="https://nina-carducci.github.io/assets/images/nina.png" />
+	<meta name="twitter:url" content="https://nina-carducci.github.io/" />
+	<script src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
 	<script defer src="./assets/scripts.js"></script>
 </head>
 <body>
@@ -24,7 +34,7 @@
 			<li><a href="#gallery">Gallery</a></li>
 			<li><a href="#services">Service</a></li>
 			<li><a href="#contact">Contact</a></li>
-			<li><a class="social-link" href="https://www.instagram.com/ninacarducci.photo/?hl=fr" target="_blank"><img src="assets/images/instagram.png" alt=""></a></li>
+			<li><a class="social-link" href="https://www.instagram.com/ninacarducci.photo/?hl=fr" target="_blank" aria-label="Nina Carducci Instagram"><img src="assets/images/instagram.png" alt=""></a></li>
 		</ul>
 	</nav>
 </header>
@@ -85,16 +95,17 @@
 </section>
 <section id="gallery">
 	<h2 class="title">Portfolio</h2>
-	<div class="filters">
+	<div class="filterGallery">
+	<div class="filters nav my-4">
 		<input
               type="button"
               value="All"
               name="filtersAll"
-              class="filtersAll"
+              class="filtersAll activeBtn"
             />
 	</div>
 	<div class="container py-3">
-		<div class="gallery row row-cols-1 row-cols-sm-2 row-cols-md-3 g-0">
+		<div class="gallery row row-cols-1 row-cols-sm-2 row-cols-md-3 g-0 gallery-show">
 			<div class="col"><img data-gallery-tag="Concerts" class="gallery-item img-fluid absolute" src="./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash.webp" alt="Concert stage with red lights"/></div>
 			<div class="col"><img data-gallery-tag="Business" class="gallery-item img-fluid absolute" src="./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash.webp" alt="Portrait of a man in a suit"/></div>
 			<div class="col"><img data-gallery-tag="Business" class="gallery-item img-fluid absolute" src="./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash.webp" alt="Woman smiling in an office"/></div>
@@ -106,6 +117,7 @@
 			<div class="col"><img data-gallery-tag="Business" class="gallery-item img-fluid absolute" src="./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash.webp" alt="Smiling woman at her desk"/></div>
 		</div>
 	</div>
+</div>
 	<div class="quote">
 		<figure>
 			<blockquote>
@@ -166,11 +178,11 @@
 			<h2>Have a question? Need a quote?</h2>
 			<p> Don’t hesitate to contact me! I’ll get back to you within 24 hours.</p>
 			<form action="" method="post">
-				<label>Name</label>
+				<label for="name">Name</label>
 				<input type="text" name="name" id="name">
-				<label>Email</label>
+				<label for="email">Email</label>
 				<input type="email" name="email" id="email">
-				<label>Message</label>
+				<label for="message">Message</label>
 				<textarea name="message" id="message" cols="30" rows="10"></textarea>
 				<input type="submit" value="Send"/>
 			</form>
